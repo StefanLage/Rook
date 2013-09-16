@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		089325C717E6C2A90069D63D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089325C617E6C2A90069D63D /* Cocoa.framework */; };
+		089325D117E6C2A90069D63D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089325CF17E6C2A90069D63D /* InfoPlist.strings */; };
+		089325D317E6C2A90069D63D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 089325D217E6C2A90069D63D /* main.m */; };
+		089325D717E6C2A90069D63D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 089325D517E6C2A90069D63D /* Credits.rtf */; };
+		089325DA17E6C2A90069D63D /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 089325D917E6C2A90069D63D /* RKAppDelegate.m */; };
+		089325DD17E6C2A90069D63D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 089325DB17E6C2A90069D63D /* MainMenu.xib */; };
+		089325E017E6C2A90069D63D /* Rook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 089325DE17E6C2A90069D63D /* Rook.xcdatamodeld */; };
+		089325E217E6C2A90069D63D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089325E117E6C2A90069D63D /* Images.xcassets */; };
+		089325E917E6C2A90069D63D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089325E817E6C2A90069D63D /* XCTest.framework */; };
+		089325EA17E6C2A90069D63D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089325C617E6C2A90069D63D /* Cocoa.framework */; };
+		089325F217E6C2A90069D63D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089325F017E6C2A90069D63D /* InfoPlist.strings */; };
+		089325F417E6C2A90069D63D /* RookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 089325F317E6C2A90069D63D /* RookTests.m */; };
+		0893260617E6CB470069D63D /* RKDashboardWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0893260417E6CB470069D63D /* RKDashboardWindowController.m */; };
+		0893260717E6CB470069D63D /* RKDashboardWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0893260517E6CB470069D63D /* RKDashboardWindowController.xib */; };
+		08EB004C17E6FDA8004D9146 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EB004817E6FDA8004D9146 /* Status.png */; };
+		08EB004D17E6FDA8004D9146 /* Status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EB004917E6FDA8004D9146 /* Status@2x.png */; };
+		08EB004E17E6FDA8004D9146 /* StatusHover.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EB004A17E6FDA8004D9146 /* StatusHover.png */; };
+		08EB004F17E6FDA8004D9146 /* StatusHover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EB004B17E6FDA8004D9146 /* StatusHover@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		089325EB17E6C2A90069D63D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089325BB17E6C2A90069D63D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 089325C217E6C2A90069D63D;
+			remoteInfo = Rook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		089325C317E6C2A90069D63D /* Rook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		089325C617E6C2A90069D63D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		089325C917E6C2A90069D63D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		089325CA17E6C2A90069D63D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		089325CB17E6C2A90069D63D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		089325CE17E6C2A90069D63D /* Rook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Rook-Info.plist"; sourceTree = "<group>"; };
+		089325D017E6C2A90069D63D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089325D217E6C2A90069D63D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		089325D417E6C2A90069D63D /* Rook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rook-Prefix.pch"; sourceTree = "<group>"; };
+		089325D617E6C2A90069D63D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		089325D817E6C2A90069D63D /* RKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKAppDelegate.h; sourceTree = "<group>"; };
+		089325D917E6C2A90069D63D /* RKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKAppDelegate.m; sourceTree = "<group>"; };
+		089325DC17E6C2A90069D63D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		089325DF17E6C2A90069D63D /* Rook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rook.xcdatamodel; sourceTree = "<group>"; };
+		089325E117E6C2A90069D63D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
+		089325E717E6C2A90069D63D /* RookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		089325E817E6C2A90069D63D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		089325EF17E6C2A90069D63D /* RookTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RookTests-Info.plist"; sourceTree = "<group>"; };
+		089325F117E6C2A90069D63D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089325F317E6C2A90069D63D /* RookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RookTests.m; sourceTree = "<group>"; };
+		0893260317E6CB470069D63D /* RKDashboardWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDashboardWindowController.h; sourceTree = "<group>"; };
+		0893260417E6CB470069D63D /* RKDashboardWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDashboardWindowController.m; sourceTree = "<group>"; };
+		0893260517E6CB470069D63D /* RKDashboardWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKDashboardWindowController.xib; sourceTree = "<group>"; };
+		08EB004817E6FDA8004D9146 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
+		08EB004917E6FDA8004D9146 /* Status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Status@2x.png"; sourceTree = "<group>"; };
+		08EB004A17E6FDA8004D9146 /* StatusHover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusHover.png; sourceTree = "<group>"; };
+		08EB004B17E6FDA8004D9146 /* StatusHover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusHover@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		089325C017E6C2A90069D63D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089325C717E6C2A90069D63D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		089325E417E6C2A90069D63D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089325EA17E6C2A90069D63D /* Cocoa.framework in Frameworks */,
+				089325E917E6C2A90069D63D /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089325BA17E6C2A90069D63D = {
+			isa = PBXGroup;
+			children = (
+				089325CC17E6C2A90069D63D /* Rook */,
+				089325ED17E6C2A90069D63D /* RookTests */,
+				089325C517E6C2A90069D63D /* Frameworks */,
+				089325C417E6C2A90069D63D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		089325C417E6C2A90069D63D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				089325C317E6C2A90069D63D /* Rook.app */,
+				089325E717E6C2A90069D63D /* RookTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		089325C517E6C2A90069D63D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089325C617E6C2A90069D63D /* Cocoa.framework */,
+				089325E817E6C2A90069D63D /* XCTest.framework */,
+				089325C817E6C2A90069D63D /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		089325C817E6C2A90069D63D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089325C917E6C2A90069D63D /* AppKit.framework */,
+				089325CA17E6C2A90069D63D /* CoreData.framework */,
+				089325CB17E6C2A90069D63D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		089325CC17E6C2A90069D63D /* Rook */ = {
+			isa = PBXGroup;
+			children = (
+				08EB004717E6FDA8004D9146 /* Assets */,
+				0893260117E6C5900069D63D /* Application */,
+				089325FF17E6C5090069D63D /* Interfaces */,
+				089325CD17E6C2A90069D63D /* Supporting Files */,
+			);
+			path = Rook;
+			sourceTree = "<group>";
+		};
+		089325CD17E6C2A90069D63D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				089325CE17E6C2A90069D63D /* Rook-Info.plist */,
+				089325CF17E6C2A90069D63D /* InfoPlist.strings */,
+				089325D217E6C2A90069D63D /* main.m */,
+				089325D417E6C2A90069D63D /* Rook-Prefix.pch */,
+				089325D517E6C2A90069D63D /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		089325ED17E6C2A90069D63D /* RookTests */ = {
+			isa = PBXGroup;
+			children = (
+				089325F317E6C2A90069D63D /* RookTests.m */,
+				089325EE17E6C2A90069D63D /* Supporting Files */,
+			);
+			path = RookTests;
+			sourceTree = "<group>";
+		};
+		089325EE17E6C2A90069D63D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				089325EF17E6C2A90069D63D /* RookTests-Info.plist */,
+				089325F017E6C2A90069D63D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		089325FD17E6C4FA0069D63D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				089325D817E6C2A90069D63D /* RKAppDelegate.h */,
+				089325D917E6C2A90069D63D /* RKAppDelegate.m */,
+				0893260317E6CB470069D63D /* RKDashboardWindowController.h */,
+				0893260417E6CB470069D63D /* RKDashboardWindowController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		089325FE17E6C5000069D63D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		089325FF17E6C5090069D63D /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				0893260517E6CB470069D63D /* RKDashboardWindowController.xib */,
+				089325DB17E6C2A90069D63D /* MainMenu.xib */,
+			);
+			name = Interfaces;
+			sourceTree = "<group>";
+		};
+		0893260017E6C5250069D63D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				089325DE17E6C2A90069D63D /* Rook.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		0893260117E6C5900069D63D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0893260017E6C5250069D63D /* Models */,
+				089325FE17E6C5000069D63D /* Views */,
+				089325FD17E6C4FA0069D63D /* Controllers */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		08EB004717E6FDA8004D9146 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				089325E117E6C2A90069D63D /* Images.xcassets */,
+				08EB004817E6FDA8004D9146 /* Status.png */,
+				08EB004917E6FDA8004D9146 /* Status@2x.png */,
+				08EB004A17E6FDA8004D9146 /* StatusHover.png */,
+				08EB004B17E6FDA8004D9146 /* StatusHover@2x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		089325C217E6C2A90069D63D /* Rook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 089325F717E6C2A90069D63D /* Build configuration list for PBXNativeTarget "Rook" */;
+			buildPhases = (
+				089325BF17E6C2A90069D63D /* Sources */,
+				089325C017E6C2A90069D63D /* Frameworks */,
+				089325C117E6C2A90069D63D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rook;
+			productName = Rook;
+			productReference = 089325C317E6C2A90069D63D /* Rook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		089325E617E6C2A90069D63D /* RookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 089325FA17E6C2A90069D63D /* Build configuration list for PBXNativeTarget "RookTests" */;
+			buildPhases = (
+				089325E317E6C2A90069D63D /* Sources */,
+				089325E417E6C2A90069D63D /* Frameworks */,
+				089325E517E6C2A90069D63D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				089325EC17E6C2A90069D63D /* PBXTargetDependency */,
+			);
+			name = RookTests;
+			productName = RookTests;
+			productReference = 089325E717E6C2A90069D63D /* RookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089325BB17E6C2A90069D63D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RK;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Matthieu;
+				TargetAttributes = {
+					089325E617E6C2A90069D63D = {
+						TestTargetID = 089325C217E6C2A90069D63D;
+					};
+				};
+			};
+			buildConfigurationList = 089325BE17E6C2A90069D63D /* Build configuration list for PBXProject "Rook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 089325BA17E6C2A90069D63D;
+			productRefGroup = 089325C417E6C2A90069D63D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				089325C217E6C2A90069D63D /* Rook */,
+				089325E617E6C2A90069D63D /* RookTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		089325C117E6C2A90069D63D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089325D117E6C2A90069D63D /* InfoPlist.strings in Resources */,
+				089325E217E6C2A90069D63D /* Images.xcassets in Resources */,
+				08EB004E17E6FDA8004D9146 /* StatusHover.png in Resources */,
+				089325D717E6C2A90069D63D /* Credits.rtf in Resources */,
+				08EB004C17E6FDA8004D9146 /* Status.png in Resources */,
+				08EB004D17E6FDA8004D9146 /* Status@2x.png in Resources */,
+				089325DD17E6C2A90069D63D /* MainMenu.xib in Resources */,
+				0893260717E6CB470069D63D /* RKDashboardWindowController.xib in Resources */,
+				08EB004F17E6FDA8004D9146 /* StatusHover@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		089325E517E6C2A90069D63D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089325F217E6C2A90069D63D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		089325BF17E6C2A90069D63D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089325D317E6C2A90069D63D /* main.m in Sources */,
+				0893260617E6CB470069D63D /* RKDashboardWindowController.m in Sources */,
+				089325DA17E6C2A90069D63D /* RKAppDelegate.m in Sources */,
+				089325E017E6C2A90069D63D /* Rook.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		089325E317E6C2A90069D63D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089325F417E6C2A90069D63D /* RookTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		089325EC17E6C2A90069D63D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 089325C217E6C2A90069D63D /* Rook */;
+			targetProxy = 089325EB17E6C2A90069D63D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089325CF17E6C2A90069D63D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089325D017E6C2A90069D63D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		089325D517E6C2A90069D63D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089325D617E6C2A90069D63D /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		089325DB17E6C2A90069D63D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089325DC17E6C2A90069D63D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		089325F017E6C2A90069D63D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089325F117E6C2A90069D63D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		089325F517E6C2A90069D63D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		089325F617E6C2A90069D63D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		089325F817E6C2A90069D63D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Rook/Rook-Prefix.pch";
+				INFOPLIST_FILE = "Rook/Rook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		089325F917E6C2A90069D63D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Rook/Rook-Prefix.pch";
+				INFOPLIST_FILE = "Rook/Rook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		089325FB17E6C2A90069D63D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Rook.app/Contents/MacOS/Rook";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Rook/Rook-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RookTests/RookTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		089325FC17E6C2A90069D63D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Rook.app/Contents/MacOS/Rook";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Rook/Rook-Prefix.pch";
+				INFOPLIST_FILE = "RookTests/RookTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		089325BE17E6C2A90069D63D /* Build configuration list for PBXProject "Rook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				089325F517E6C2A90069D63D /* Debug */,
+				089325F617E6C2A90069D63D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		089325F717E6C2A90069D63D /* Build configuration list for PBXNativeTarget "Rook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				089325F817E6C2A90069D63D /* Debug */,
+				089325F917E6C2A90069D63D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		089325FA17E6C2A90069D63D /* Build configuration list for PBXNativeTarget "RookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				089325FB17E6C2A90069D63D /* Debug */,
+				089325FC17E6C2A90069D63D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		089325DE17E6C2A90069D63D /* Rook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				089325DF17E6C2A90069D63D /* Rook.xcdatamodel */,
+			);
+			currentVersion = 089325DF17E6C2A90069D63D /* Rook.xcdatamodel */;
+			path = Rook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 089325BB17E6C2A90069D63D /* Project object */;
+}
