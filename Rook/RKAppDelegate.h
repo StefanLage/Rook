@@ -7,11 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "RKDashboardWindowController.h"
 
 @interface RKAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
-
+@property (nonatomic, strong, readonly) RKDashboardWindowController *dashboardWindowController;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

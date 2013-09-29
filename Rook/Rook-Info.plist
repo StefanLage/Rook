@@ -27,7 +27,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2013 Matthieu. All rights reserved.</string>
 	<key>NSMainNibFile</key>
-	<string>RKDashboardWindowController</string>
+	<string>MainMenu</string>
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSPrincipalClass</key>

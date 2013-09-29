@@ -8,15 +8,27 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface RKDashboardWindowController : NSWindowController
+@interface RKDashboardWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate>
 
-@property (nonatomic, retain) IBOutlet NSButton *addBtn;
-@property (nonatomic, retain) IBOutlet NSButton *removeBtn;
-@property (nonatomic, retain) IBOutlet NSPanel *editWindow;
+#pragma mark - XIB Bindings
+@property (nonatomic, retain) IBOutlet NSButton *addChannelBtn;
+@property (nonatomic, retain) IBOutlet NSButton *removeChannelBtn;
+@property (nonatomic, retain) IBOutlet NSButton *cancelChannelModalBtn;
+@property (nonatomic, retain) IBOutlet NSButton *saveChannelModalBtn;
+@property (nonatomic, retain) IBOutlet NSPanel *channelModal;
+@property (nonatomic, retain) IBOutlet NSTableView *tableView;
 
--(IBAction) openModal:(id)sender;
--(IBAction) closeModal:(id)sender;
--(IBAction) addBtnAction:(id)sender;
--(IBAction) removeBtnAction:(id)sender;
+#pragma mark - Logic datas
+@property (strong) NSMutableArray *passwords;
+
+#pragma mark - XIB Action Bindings
+-(IBAction) addChannel:(id)sender;
+-(IBAction) removeChannel:(id)sender;
+-(IBAction) openChannelModal:(id)sender;
+-(IBAction) closeChannelModel:(id)sender;
+
+#pragma mark - NSTableView Datasource / Delegate
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row;
+- (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;
 
 @end

@@ -13,9 +13,12 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize dashboardWindowController = _dashboardWindowController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    _dashboardWindowController = [[RKDashboardWindowController alloc] init];
+    [_dashboardWindowController showWindow:nil];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "matthieu.Rook" in the user's Application Support directory.

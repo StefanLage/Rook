@@ -7,47 +7,74 @@
 //
 
 #import "RKDashboardWindowController.h"
+#import "RKPassword.h"
 
 @implementation RKDashboardWindowController
 
-@synthesize addBtn, removeBtn, editWindow;
+@synthesize addChannelBtn, removeChannelBtn, cancelChannelModalBtn, saveChannelModalBtn;
+@synthesize channelModal;
+@synthesize passwords;
+@synthesize tableView = _tableView;
 
-- (id) initWithWindowNibName:(NSString *)windowNibName
+#pragma mark - NSWindow Initialization
+- (id) init
 {
-    self = [super initWithWindowNibName:windowNibName];
-    if(self){}
+    if ((self = [super init])) {}
     return self;
 }
 
-- (void)windowDidLoad
+- (NSString *) windowNibName {
+	return @"RKDashboardWindowController";
+}
+
+- (void) windowDidLoad
 {
     [super windowDidLoad];
 }
 
-
-
--(IBAction) openModal:(id)sender
+#pragma mark - XIB Action Bindings
+// Open Channel Modal
+-(IBAction) openChannelModal:(id)sender
 {
-    [NSApp beginSheet:self.editWindow
+    [NSApp beginSheet:self.channelModal
        modalForWindow:self.window
         modalDelegate:self
        didEndSelector:nil
           contextInfo:nil];
 }
-
--(IBAction) closeModal:(id)sender
+// Close Channel Modal
+-(IBAction) closeChannelModel:(id)sender
 {
-    [NSApp endSheet:editWindow];
-    [editWindow orderOut:sender];
+    [NSApp endSheet:self.channelModal];
+    [self.channelModal orderOut:sender];
+}
+// Add Channel
+-(IBAction) addChannel:(id)sender
+{
+    NSLog(@"Add Channel");
+}
+// Remove Channel
+-(IBAction) removeChannel:(id)sender
+{
+    NSLog(@"Remove Channel");
 }
 
 
--(IBAction) addBtnAction:(id)sender
-{
+#pragma - Table View Datasource
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    RKPassword *password = [self.passwords objectAtIndex:row];
+    if(password == nil)
+        return @"undefined";
+    if( [tableColumn.identifier isEqualToString:@"ChannelColumn"] )
+        return [password channel];
+    else if( [tableColumn.identifier isEqualToString:@"IdentifierColumn"] )
+        return [password identifier];
+    return @"undefined";
 }
 
--(IBAction) removeBtnAction:(id)sender
-{
+- (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
+    NSLog(@"count");
+    return [self.passwords count];
 }
 
 @end
