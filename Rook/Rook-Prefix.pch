@@ -7,3 +7,11 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 #endif
+
+#ifdef DEBUG
+    #define APPSUPPORT_DIR @"matthieu.Rook-dev"
+    #define COREDATA_FILE  @"Rook-dev.storedata"
+#else
+    #define APPSUPPORT_DIR @"matthieu.Rook"
+    #define COREDATA_FILE  @"Rook.storedata"
+#endif

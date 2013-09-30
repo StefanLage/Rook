@@ -26,7 +26,7 @@
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
-    return [appSupportURL URLByAppendingPathComponent:@"matthieu.Rook"];
+    return [appSupportURL URLByAppendingPathComponent:APPSUPPORT_DIR];
 }
 
 // Creates if necessary and returns the managed object model for the application.
@@ -83,7 +83,7 @@
         }
     }
     
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"Rook.storedata"];
+    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:COREDATA_FILE];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
     if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
         [[NSApplication sharedApplication] presentError:error];
