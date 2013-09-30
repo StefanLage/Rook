@@ -15,6 +15,7 @@
 @synthesize channelField, aliasField, identifierField, passwordField;
 @synthesize channelModal, deleteModal, tableView = _tableView;
 @synthesize context, passwordArrayController;
+@synthesize revisionLabel, commitLabel;
 
 #pragma mark - NSWindow Initialization
 - (id) initWithMOContext:(NSManagedObjectContext*)mocontext
@@ -39,6 +40,12 @@
 {
     [[self tableView] setTarget:self];
     [[self tableView] setDoubleAction:@selector(openEditChannelModal)];
+    
+    // Setting Revision Tag
+    NSBundle *mainBundle = nil;
+    mainBundle = [NSBundle mainBundle];
+    [[self revisionLabel] setStringValue:[mainBundle objectForInfoDictionaryKey:@"Revision"]];
+    [[self commitLabel] setStringValue:[mainBundle objectForInfoDictionaryKey:@"Commit"]];
 }
 
 #pragma mark - Helpers

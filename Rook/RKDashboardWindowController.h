@@ -25,6 +25,8 @@
 @property (nonatomic, retain) IBOutlet NSPanel *channelModal;
 @property (nonatomic, retain) IBOutlet NSPanel *deleteModal;
 @property (nonatomic, retain) IBOutlet NSButton *pastePasswordBtn;
+@property (nonatomic, retain) IBOutlet NSTextField *revisionLabel;
+@property (nonatomic, retain) IBOutlet NSTextField *commitLabel;
 
 #pragma mark - Logic datas
 @property (nonatomic, retain) IBOutlet NSArrayController *passwordArrayController;

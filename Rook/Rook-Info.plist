@@ -21,16 +21,20 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0</string>
+	<key>Commit</key>
+	<string>e8fde01f7bafde10fe3a75e1358b950c6b22294e</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
+	<key>LSUIElement</key>
+	<false/>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2013 Matthieu. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
-	<key>LSUIElement</key>
-	<true/>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>Revision</key>
+	<string>0.5-a</string>
 </dict>
 </plist>

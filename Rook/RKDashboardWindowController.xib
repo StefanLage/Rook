@@ -12,12 +12,14 @@
                 <outlet property="cancelChannelModalBtn" destination="wJc-Vc-eMr" id="Yf1-Xy-5Go"/>
                 <outlet property="channelField" destination="wdq-yV-MrO" id="M0Z-Oy-LRp"/>
                 <outlet property="channelModal" destination="zd2-ZU-Kep" id="BGD-3R-m7o"/>
+                <outlet property="commitLabel" destination="GaT-iG-bNH" id="Lew-Qy-Mae"/>
                 <outlet property="deleteModal" destination="E46-1B-64V" id="ssv-k9-rhu"/>
                 <outlet property="identifierField" destination="jHE-Xu-unk" id="hMT-0a-nQZ"/>
                 <outlet property="passwordArrayController" destination="bBh-Uf-vWf" id="iFO-1K-LhO"/>
                 <outlet property="passwordField" destination="IQE-C4-Qir" id="cUe-ss-yuK"/>
                 <outlet property="pastePasswordBtn" destination="sbH-p4-7r6" id="KC3-U9-asD"/>
                 <outlet property="removeChannelBtn" destination="RXz-Mn-UhU" id="ACH-Bp-qDC"/>
+                <outlet property="revisionLabel" destination="qZ6-4P-zZR" id="Tpg-i7-5Je"/>
                 <outlet property="saveChannelModalBtn" destination="5wk-1r-pTh" id="Zgt-cT-f1X"/>
                 <outlet property="tableView" destination="aT3-Y6-QjR" id="RnV-vY-jet"/>
                 <outlet property="window" destination="1" id="Oxc-8N-hwl"/>
@@ -154,6 +156,24 @@
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Rook" id="ULt-fC-hwb">
                             <font key="font" size="20" name="HelveticaNeue-Medium"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="qZ6-4P-zZR">
+                        <rect key="frame" x="379" y="34" width="295" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Revision" id="jCE-cn-vHx">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="GaT-iG-bNH">
+                        <rect key="frame" x="379" y="9" width="295" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Commit" id="QHW-fc-zxy">
+                            <font key="font" size="9" name="LucidaGrande"/>
+                            <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
