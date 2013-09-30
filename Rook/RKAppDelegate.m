@@ -17,7 +17,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    _dashboardWindowController = [[RKDashboardWindowController alloc] init];
+    _dashboardWindowController = [[RKDashboardWindowController alloc] initWithMOContext:[self managedObjectContext]];
     [_dashboardWindowController showWindow:nil];
 }
 

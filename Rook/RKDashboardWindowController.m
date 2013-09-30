@@ -7,23 +7,26 @@
 //
 
 #import "RKDashboardWindowController.h"
-#import "RKPassword.h"
+#import "Password.h"
 
 @implementation RKDashboardWindowController
 
-@synthesize addChannelBtn, removeChannelBtn, cancelChannelModalBtn, saveChannelModalBtn;
-@synthesize channelModal;
-@synthesize passwords;
-@synthesize tableView = _tableView;
+@synthesize addChannelBtn, removeChannelBtn, cancelChannelModalBtn, saveChannelModalBtn, pastePasswordBtn;
+@synthesize channelField, aliasField, identifierField, passwordField;
+@synthesize channelModal, deleteModal, tableView = _tableView;
+@synthesize context, passwordArrayController;
 
 #pragma mark - NSWindow Initialization
-- (id) init
+- (id) initWithMOContext:(NSManagedObjectContext*)mocontext
 {
-    if ((self = [super init])) {}
+    if ((self = [super init]))
+        self.context = mocontext;
+    isEditing = false;
     return self;
 }
 
-- (NSString *) windowNibName {
+- (NSString *) windowNibName
+{
 	return @"RKDashboardWindowController";
 }
 
@@ -32,49 +35,136 @@
     [super windowDidLoad];
 }
 
-#pragma mark - XIB Action Bindings
-// Open Channel Modal
--(IBAction) openChannelModal:(id)sender
+- (void)awakeFromNib
 {
-    [NSApp beginSheet:self.channelModal
+    [[self tableView] setTarget:self];
+    [[self tableView] setDoubleAction:@selector(openEditChannelModal)];
+}
+
+#pragma mark - Helpers
+
+-(void) openModalWithPanel:(NSPanel*)panel
+{
+    [NSApp beginSheet:panel
        modalForWindow:self.window
         modalDelegate:self
        didEndSelector:nil
           contextInfo:nil];
 }
-// Close Channel Modal
--(IBAction) closeChannelModel:(id)sender
+
+-(void) closeModalForPanel:(NSPanel*)panel andSender:(id)sender
 {
-    [NSApp endSheet:self.channelModal];
-    [self.channelModal orderOut:sender];
+    [NSApp endSheet:panel];
+    [panel orderOut:sender];
 }
+
+-(BOOL) copyStringToPasteboard:(NSString*)string
+{
+    NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+    [pasteboard clearContents];
+    return [pasteboard writeObjects:[NSArray arrayWithObject:string]];
+}
+
+#pragma mark - XIB & Click Action Bindings
+//
+//  MODALS
+//
+// Open Channel Modal
+-(IBAction) openChannelModal:(id)sender
+{
+    [[self channelField] becomeFirstResponder];
+    [[self channelModal] setTitle:@"Add"];
+    [self openModalWithPanel:self.channelModal];
+}
+// Close Channel Modal
+-(IBAction) closeChannelModal:(id)sender
+{
+    [self closeModalForPanel:self.channelModal andSender:sender];
+    isEditing = false;
+    [[self pastePasswordBtn] setHidden:true];
+}
+// Open Delete Modal
+-(IBAction) openDeleteModal:(id)sender
+{
+    [self openModalWithPanel:self.deleteModal];
+}
+// Close Delete Modal
+-(IBAction) closeDeleteModal:(id)sender
+{
+    [self closeModalForPanel:self.deleteModal andSender:sender];
+}
+// Open Edit Channel Modal
+-(void) openEditChannelModal
+{
+    // Retrieving object at index
+    NSInteger indexRowSelected = [[self tableView] selectedRow];
+    if([[[self passwordArrayController] arrangedObjects] count] < indexRowSelected)
+        return;
+    Password *pwd = [[[self passwordArrayController] arrangedObjects] objectAtIndex:indexRowSelected];
+    
+    // Filling fields w/ object property
+    [[self channelField] setStringValue:pwd.channel];
+    [[self aliasField] setStringValue:pwd.alias];
+    [[self identifierField] setStringValue:pwd.identifier];
+    [[self passwordField] setStringValue:pwd.password];
+    
+    // Opening edit modal
+    [[self pastePasswordBtn] setHidden:false];
+    [[self channelField] becomeFirstResponder];
+    [[self channelModal] setTitle:@"Edit"];
+    [self openModalWithPanel:self.channelModal];
+    isEditing = true;
+}
+
+//
+//  ENTITIES
+//
 // Add Channel
 -(IBAction) addChannel:(id)sender
 {
-    NSLog(@"Add Channel");
+    // Creating Password entity
+    Password *pwd = nil;
+    if(!isEditing)
+        pwd = [NSEntityDescription insertNewObjectForEntityForName:@"Password"
+                                            inManagedObjectContext:[self context]];
+    else
+    {
+        NSInteger indexRowSelected = [[self tableView] selectedRow];
+        pwd = [[[self passwordArrayController] arrangedObjects] objectAtIndex:indexRowSelected];
+    }
+
+    [pwd setChannel:[[self channelField] stringValue]];
+    [pwd setAlias:[[self aliasField] stringValue]];
+    [pwd setIdentifier:[[self identifierField] stringValue]];
+    [pwd setPassword:[[self passwordField] stringValue]];
+    
+    // Saving Context
+    [[self context] save:nil];
+    
+    // Closing Modal
+    [self closeChannelModal:nil];
+    [[self channelField] setStringValue:@""];
+    [[self aliasField] setStringValue:@""];
+    [[self identifierField] setStringValue:@""];
+    [[self passwordField] setStringValue:@""];
 }
-// Remove Channel
--(IBAction) removeChannel:(id)sender
+// Delete Channel
+-(IBAction) confirmDelete:(id)sender
 {
-    NSLog(@"Remove Channel");
+    // Removing object at row index
+    NSInteger indexRowSelected = [[self tableView] selectedRow];
+    [[self passwordArrayController] removeObjectAtArrangedObjectIndex:indexRowSelected];
+
+    // Saving Context
+    [[self context] save:nil];
+    
+    // Closing Modal
+    [self closeDeleteModal:nil];
 }
 
-
-#pragma - Table View Datasource
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    RKPassword *password = [self.passwords objectAtIndex:row];
-    if(password == nil)
-        return @"undefined";
-    if( [tableColumn.identifier isEqualToString:@"ChannelColumn"] )
-        return [password channel];
-    else if( [tableColumn.identifier isEqualToString:@"IdentifierColumn"] )
-        return [password identifier];
-    return @"undefined";
-}
-
-- (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
-    NSLog(@"count");
-    return [self.passwords count];
+-(IBAction) copyPasswordToPasteboard:(id)sender
+{
+    [self copyStringToPasteboard:[[self passwordField] stringValue]];
 }
 
 @end

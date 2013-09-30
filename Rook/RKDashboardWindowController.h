@@ -8,27 +8,37 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface RKDashboardWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate>
+@interface RKDashboardWindowController : NSWindowController {
+    bool isEditing;
+}
 
 #pragma mark - XIB Bindings
 @property (nonatomic, retain) IBOutlet NSButton *addChannelBtn;
 @property (nonatomic, retain) IBOutlet NSButton *removeChannelBtn;
 @property (nonatomic, retain) IBOutlet NSButton *cancelChannelModalBtn;
 @property (nonatomic, retain) IBOutlet NSButton *saveChannelModalBtn;
-@property (nonatomic, retain) IBOutlet NSPanel *channelModal;
 @property (nonatomic, retain) IBOutlet NSTableView *tableView;
+@property (nonatomic, retain) IBOutlet NSTextField *channelField;
+@property (nonatomic, retain) IBOutlet NSTextField *aliasField;
+@property (nonatomic, retain) IBOutlet NSTextField *identifierField;
+@property (nonatomic, retain) IBOutlet NSTextField *passwordField;
+@property (nonatomic, retain) IBOutlet NSPanel *channelModal;
+@property (nonatomic, retain) IBOutlet NSPanel *deleteModal;
+@property (nonatomic, retain) IBOutlet NSButton *pastePasswordBtn;
 
 #pragma mark - Logic datas
-@property (strong) NSMutableArray *passwords;
+@property (nonatomic, retain) IBOutlet NSArrayController *passwordArrayController;
+@property (retain) NSManagedObjectContext *context;
+
+#pragma mark - Initialization
+- (id) initWithMOContext:(NSManagedObjectContext*)mocontext;
 
 #pragma mark - XIB Action Bindings
 -(IBAction) addChannel:(id)sender;
--(IBAction) removeChannel:(id)sender;
 -(IBAction) openChannelModal:(id)sender;
--(IBAction) closeChannelModel:(id)sender;
-
-#pragma mark - NSTableView Datasource / Delegate
-- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row;
-- (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView;
-
+-(IBAction) closeChannelModal:(id)sender;
+-(IBAction) confirmDelete:(id)sender;
+-(IBAction) openDeleteModal:(id)sender;
+-(IBAction) closeDeleteModal:(id)sender;
+-(IBAction) copyPasswordToPasteboard:(id)sender;
 @end
