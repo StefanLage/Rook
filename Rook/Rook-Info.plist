@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>rook.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>matthieu.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>Commit</key>
-	<string>148578f9fd3e18fd6ad6811404804c27270a936c</string>
+	<string>31199f0d692a4e348df17c863135d51d0253b26d</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>LSUIElement</key>

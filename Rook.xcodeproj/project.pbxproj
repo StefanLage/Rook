@@ -14,7 +14,6 @@
 		089325DA17E6C2A90069D63D /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 089325D917E6C2A90069D63D /* RKAppDelegate.m */; };
 		089325DD17E6C2A90069D63D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 089325DB17E6C2A90069D63D /* MainMenu.xib */; };
 		089325E017E6C2A90069D63D /* Rook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 089325DE17E6C2A90069D63D /* Rook.xcdatamodeld */; };
-		089325E217E6C2A90069D63D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089325E117E6C2A90069D63D /* Images.xcassets */; };
 		089325E917E6C2A90069D63D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089325E817E6C2A90069D63D /* XCTest.framework */; };
 		089325EA17E6C2A90069D63D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089325C617E6C2A90069D63D /* Cocoa.framework */; };
 		089325F217E6C2A90069D63D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089325F017E6C2A90069D63D /* InfoPlist.strings */; };
@@ -23,6 +22,7 @@
 		0893260717E6CB470069D63D /* RKDashboardWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0893260517E6CB470069D63D /* RKDashboardWindowController.xib */; };
 		08BF16DC17FA4C3000E1A642 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BF16DB17FA4C3000E1A642 /* INAppStoreWindow.m */; };
 		08BF16DF17FA518400E1A642 /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BF16DE17FA518400E1A642 /* INWindowButton.m */; };
+		08BF16E217FA7E2E00E1A642 /* rook.icns in Resources */ = {isa = PBXBuildFile; fileRef = 08BF16E117FA7E2E00E1A642 /* rook.icns */; };
 		08D61F6217F93174006D8FB2 /* Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D61F6117F93174006D8FB2 /* Password.m */; };
 		08EB004C17E6FDA8004D9146 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EB004817E6FDA8004D9146 /* Status.png */; };
 		08EB004D17E6FDA8004D9146 /* Status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EB004917E6FDA8004D9146 /* Status@2x.png */; };
@@ -56,7 +56,6 @@
 		089325D917E6C2A90069D63D /* RKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKAppDelegate.m; sourceTree = "<group>"; };
 		089325DC17E6C2A90069D63D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		089325DF17E6C2A90069D63D /* Rook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rook.xcdatamodel; sourceTree = "<group>"; };
-		089325E117E6C2A90069D63D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		089325E717E6C2A90069D63D /* RookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		089325E817E6C2A90069D63D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		089325EF17E6C2A90069D63D /* RookTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RookTests-Info.plist"; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		08BF16DB17FA4C3000E1A642 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
 		08BF16DD17FA518400E1A642 /* INWindowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INWindowButton.h; sourceTree = "<group>"; };
 		08BF16DE17FA518400E1A642 /* INWindowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INWindowButton.m; sourceTree = "<group>"; };
+		08BF16E117FA7E2E00E1A642 /* rook.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = rook.icns; sourceTree = "<group>"; };
 		08D61F6017F93174006D8FB2 /* Password.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Password.h; sourceTree = "<group>"; };
 		08D61F6117F93174006D8FB2 /* Password.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Password.m; sourceTree = "<group>"; };
 		08EB004817E6FDA8004D9146 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 		08EB004717E6FDA8004D9146 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				089325E117E6C2A90069D63D /* Images.xcassets */,
+				08BF16E117FA7E2E00E1A642 /* rook.icns */,
 				08EB004817E6FDA8004D9146 /* Status.png */,
 				08EB004917E6FDA8004D9146 /* Status@2x.png */,
 				08EB004A17E6FDA8004D9146 /* StatusHover.png */,
@@ -330,7 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				089325D117E6C2A90069D63D /* InfoPlist.strings in Resources */,
-				089325E217E6C2A90069D63D /* Images.xcassets in Resources */,
+				08BF16E217FA7E2E00E1A642 /* rook.icns in Resources */,
 				08EB004E17E6FDA8004D9146 /* StatusHover.png in Resources */,
 				08F94B7D17F9F44000265DFC /* version.sh in Resources */,
 				089325D717E6C2A90069D63D /* Credits.rtf in Resources */,
