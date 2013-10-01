@@ -21,6 +21,11 @@
     [_dashboardWindowController showWindow:nil];
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
+}
+
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "matthieu.Rook" in the user's Application Support directory.
 - (NSURL *)applicationFilesDirectory
 {

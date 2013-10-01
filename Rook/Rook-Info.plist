@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>Commit</key>
-	<string>e05a007b2b72c40d297137c69ff028df7d34e98d</string>
+	<string>46c259dc496059db3132ac41a31ac338b7b49bfe</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>LSUIElement</key>
