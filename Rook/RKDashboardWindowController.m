@@ -79,6 +79,14 @@
     return [pasteboard writeObjects:[NSArray arrayWithObject:string]];
 }
 
+-(void) clearFields
+{
+    [[self channelField] setStringValue:@""];
+    [[self aliasField] setStringValue:@""];
+    [[self identifierField] setStringValue:@""];
+    [[self passwordField] setStringValue:@""];
+}
+
 #pragma mark - XIB & Click Action Bindings
 //
 //  MODALS
@@ -95,6 +103,7 @@
 {
     [self closeModalForPanel:self.channelModal andSender:sender];
     isEditing = false;
+    [self clearFields];
     [[self pastePasswordBtn] setHidden:true];
 }
 // Open Delete Modal
@@ -157,10 +166,6 @@
     
     // Closing Modal
     [self closeChannelModal:nil];
-    [[self channelField] setStringValue:@""];
-    [[self aliasField] setStringValue:@""];
-    [[self identifierField] setStringValue:@""];
-    [[self passwordField] setStringValue:@""];
 }
 // Delete Channel
 -(IBAction) confirmDelete:(id)sender
