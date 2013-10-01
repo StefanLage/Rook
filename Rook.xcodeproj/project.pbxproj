@@ -21,6 +21,8 @@
 		089325F417E6C2A90069D63D /* RookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 089325F317E6C2A90069D63D /* RookTests.m */; };
 		0893260617E6CB470069D63D /* RKDashboardWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0893260417E6CB470069D63D /* RKDashboardWindowController.m */; };
 		0893260717E6CB470069D63D /* RKDashboardWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0893260517E6CB470069D63D /* RKDashboardWindowController.xib */; };
+		08BF16DC17FA4C3000E1A642 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BF16DB17FA4C3000E1A642 /* INAppStoreWindow.m */; };
+		08BF16DF17FA518400E1A642 /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BF16DE17FA518400E1A642 /* INWindowButton.m */; };
 		08D61F6217F93174006D8FB2 /* Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D61F6117F93174006D8FB2 /* Password.m */; };
 		08EB004C17E6FDA8004D9146 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EB004817E6FDA8004D9146 /* Status.png */; };
 		08EB004D17E6FDA8004D9146 /* Status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EB004917E6FDA8004D9146 /* Status@2x.png */; };
@@ -63,6 +65,10 @@
 		0893260317E6CB470069D63D /* RKDashboardWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDashboardWindowController.h; sourceTree = "<group>"; };
 		0893260417E6CB470069D63D /* RKDashboardWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDashboardWindowController.m; sourceTree = "<group>"; };
 		0893260517E6CB470069D63D /* RKDashboardWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKDashboardWindowController.xib; sourceTree = "<group>"; };
+		08BF16DA17FA4C3000E1A642 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindow.h; sourceTree = "<group>"; };
+		08BF16DB17FA4C3000E1A642 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
+		08BF16DD17FA518400E1A642 /* INWindowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INWindowButton.h; sourceTree = "<group>"; };
+		08BF16DE17FA518400E1A642 /* INWindowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INWindowButton.m; sourceTree = "<group>"; };
 		08D61F6017F93174006D8FB2 /* Password.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Password.h; sourceTree = "<group>"; };
 		08D61F6117F93174006D8FB2 /* Password.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Password.m; sourceTree = "<group>"; };
 		08EB004817E6FDA8004D9146 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 		089325CC17E6C2A90069D63D /* Rook */ = {
 			isa = PBXGroup;
 			children = (
+				08BF16D917FA4C3000E1A642 /* Vendor */,
 				08EB004717E6FDA8004D9146 /* Assets */,
 				0893260117E6C5900069D63D /* Application */,
 				089325FF17E6C5090069D63D /* Interfaces */,
@@ -219,6 +226,17 @@
 				089325FD17E6C4FA0069D63D /* Controllers */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		08BF16D917FA4C3000E1A642 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				08BF16DD17FA518400E1A642 /* INWindowButton.h */,
+				08BF16DE17FA518400E1A642 /* INWindowButton.m */,
+				08BF16DA17FA4C3000E1A642 /* INAppStoreWindow.h */,
+				08BF16DB17FA4C3000E1A642 /* INAppStoreWindow.m */,
+			);
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		08EB004717E6FDA8004D9146 /* Assets */ = {
@@ -355,8 +373,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08BF16DC17FA4C3000E1A642 /* INAppStoreWindow.m in Sources */,
 				089325D317E6C2A90069D63D /* main.m in Sources */,
 				0893260617E6CB470069D63D /* RKDashboardWindowController.m in Sources */,
+				08BF16DF17FA518400E1A642 /* INWindowButton.m in Sources */,
 				08D61F6217F93174006D8FB2 /* Password.m in Sources */,
 				089325DA17E6C2A90069D63D /* RKAppDelegate.m in Sources */,
 				089325E017E6C2A90069D63D /* Rook.xcdatamodeld in Sources */,

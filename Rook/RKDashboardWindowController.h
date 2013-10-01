@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "INAppStoreWindow.h"
 
 @interface RKDashboardWindowController : NSWindowController {
     bool isEditing;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) IBOutlet NSButton *pastePasswordBtn;
 @property (nonatomic, retain) IBOutlet NSTextField *revisionLabel;
 @property (nonatomic, retain) IBOutlet NSTextField *commitLabel;
+@property (nonatomic, retain) IBOutlet NSView *titleBarView;
 
 #pragma mark - Logic datas
 @property (nonatomic, retain) IBOutlet NSArrayController *passwordArrayController;

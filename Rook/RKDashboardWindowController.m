@@ -13,7 +13,7 @@
 
 @synthesize addChannelBtn, removeChannelBtn, cancelChannelModalBtn, saveChannelModalBtn, pastePasswordBtn;
 @synthesize channelField, aliasField, identifierField, passwordField;
-@synthesize channelModal, deleteModal, tableView = _tableView;
+@synthesize channelModal, deleteModal, titleBarView, tableView = _tableView;
 @synthesize context, passwordArrayController;
 @synthesize revisionLabel, commitLabel;
 
@@ -40,6 +40,13 @@
 {
     [[self tableView] setTarget:self];
     [[self tableView] setDoubleAction:@selector(openEditChannelModal)];
+    
+    // Custom title bar size & view
+    INAppStoreWindow *aWindow = (INAppStoreWindow*)[self window];
+    aWindow.titleBarHeight = 40.0;
+    self.titleBarView.frame = aWindow.titleBarView.bounds;
+    self.titleBarView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    [aWindow.titleBarView addSubview:self.titleBarView];
     
     // Setting Revision Tag
     NSBundle *mainBundle = nil;
