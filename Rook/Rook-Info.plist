@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>Commit</key>
-	<string>31199f0d692a4e348df17c863135d51d0253b26d</string>
+	<string>d5c662ce67d0f541e174405f892a4de6087f27ce</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>LSUIElement</key>
@@ -35,6 +35,6 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>Revision</key>
-	<string>0.5-a</string>
+	<string>0.5-a2</string>
 </dict>
 </plist>
