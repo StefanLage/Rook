@@ -20,9 +20,10 @@
 #pragma mark - NSWindow Initialization
 - (id) initWithMOContext:(NSManagedObjectContext*)mocontext
 {
-    if ((self = [super init]))
+    if ((self = [super init])){
         self.context = mocontext;
-    isEditing = false;
+        isEditing = false;
+    }
     return self;
 }
 
