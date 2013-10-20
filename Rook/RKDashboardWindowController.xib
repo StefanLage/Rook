@@ -84,7 +84,7 @@
                             <rect key="frame" x="1" y="17" width="687" height="242"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="medium" headerView="hiM-kY-deG" id="yya-QF-HBs">
+                                <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="24" rowSizeStyle="medium" headerView="hiM-kY-deG" id="yya-QF-HBs">
                                     <rect key="frame" x="0.0" y="0.0" width="687" height="242"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="6"/>
@@ -104,7 +104,11 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <connections>
-                                                <binding destination="bBh-Uf-vWf" name="value" keyPath="arrangedObjects.channel" id="sun-YW-mNw"/>
+                                                <binding destination="bBh-Uf-vWf" name="value" keyPath="arrangedObjects.channel" id="8lN-Ot-JlZ">
+                                                    <dictionary key="options">
+                                                        <bool key="NSConditionallySetsEditable" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
                                             </connections>
                                         </tableColumn>
                                         <tableColumn identifier="identifier" width="341.2109375" minWidth="40" maxWidth="1000" id="nb3-Am-FMy">
@@ -120,7 +124,11 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <connections>
-                                                <binding destination="bBh-Uf-vWf" name="value" keyPath="arrangedObjects.identifier" id="7zs-wT-naP"/>
+                                                <binding destination="bBh-Uf-vWf" name="value" keyPath="arrangedObjects.identifier" id="Uq7-R9-6N1">
+                                                    <dictionary key="options">
+                                                        <bool key="NSConditionallySetsEditable" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
                                             </connections>
                                         </tableColumn>
                                         <tableColumn width="96" minWidth="10" maxWidth="3.4028234663852886e+38" id="xiS-SX-d4G">
@@ -136,7 +144,11 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <connections>
-                                                <binding destination="bBh-Uf-vWf" name="value" keyPath="arrangedObjects.alias" id="5xr-KC-Tee"/>
+                                                <binding destination="bBh-Uf-vWf" name="value" keyPath="arrangedObjects.alias" id="68h-W7-KgH">
+                                                    <dictionary key="options">
+                                                        <bool key="NSConditionallySetsEditable" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
                                             </connections>
                                         </tableColumn>
                                     </tableColumns>
