@@ -12,7 +12,7 @@
 
 @interface RKAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (nonatomic, strong, readonly) RKDashboardWindowController *dashboardWindowController;
+@property (readonly, strong, nonatomic) RKDashboardWindowController *dashboardWindowController;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

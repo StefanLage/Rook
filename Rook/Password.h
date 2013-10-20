@@ -12,9 +12,9 @@
 
 @interface Password : NSManagedObject
 
-@property (nonatomic, retain) NSString * channel;
-@property (nonatomic, retain) NSString * identifier;
-@property (nonatomic, retain) NSString * alias;
-@property (nonatomic, retain) NSString * password;
+@property (strong, nonatomic) NSString * channel;
+@property (strong, nonatomic) NSString * identifier;
+@property (strong, nonatomic) NSString * alias;
+@property (strong, nonatomic) NSString * password;
 
 @end

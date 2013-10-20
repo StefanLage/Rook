@@ -18,7 +18,7 @@
 @synthesize revisionLabel, commitLabel;
 
 #pragma mark - NSWindow Initialization
-- (id) initWithMOContext:(NSManagedObjectContext*)mocontext
+- (id)initWithMOContext:(NSManagedObjectContext *)mocontext
 {
     if ((self = [super init])){
         self.context = mocontext;
@@ -27,12 +27,12 @@
     return self;
 }
 
-- (NSString *) windowNibName
+- (NSString *)windowNibName
 {
 	return @"RKDashboardWindowController";
 }
 
-- (void) windowDidLoad
+- (void)windowDidLoad
 {
     [super windowDidLoad];
 }
@@ -58,7 +58,7 @@
 
 #pragma mark - Helpers
 
--(void) openModalWithPanel:(NSPanel*)panel
+- (void)openModalWithPanel:(NSPanel *)panel
 {
     [NSApp beginSheet:panel
        modalForWindow:self.window
@@ -67,20 +67,20 @@
           contextInfo:nil];
 }
 
--(void) closeModalForPanel:(NSPanel*)panel andSender:(id)sender
+- (void)closeModalForPanel:(NSPanel *)panel andSender:(id)sender
 {
     [NSApp endSheet:panel];
     [panel orderOut:sender];
 }
 
--(BOOL) copyStringToPasteboard:(NSString*)string
+- (BOOL)copyStringToPasteboard:(NSString *)string
 {
     NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
     [pasteboard clearContents];
     return [pasteboard writeObjects:[NSArray arrayWithObject:string]];
 }
 
--(void) clearFields
+- (void)clearFields
 {
     [[self channelField] setStringValue:@""];
     [[self aliasField] setStringValue:@""];
@@ -93,14 +93,14 @@
 //  MODALS
 //
 // Open Channel Modal
--(IBAction) openChannelModal:(id)sender
+- (IBAction)openChannelModal:(id)sender
 {
     [[self channelField] becomeFirstResponder];
     [[self channelModal] setTitle:@"Add"];
     [self openModalWithPanel:self.channelModal];
 }
 // Close Channel Modal
--(IBAction) closeChannelModal:(id)sender
+- (IBAction)closeChannelModal:(id)sender
 {
     [self closeModalForPanel:self.channelModal andSender:sender];
     isEditing = false;
@@ -108,17 +108,17 @@
     [[self pastePasswordBtn] setHidden:true];
 }
 // Open Delete Modal
--(IBAction) openDeleteModal:(id)sender
+- (IBAction)openDeleteModal:(id)sender
 {
     [self openModalWithPanel:self.deleteModal];
 }
 // Close Delete Modal
--(IBAction) closeDeleteModal:(id)sender
+- (IBAction)closeDeleteModal:(id)sender
 {
     [self closeModalForPanel:self.deleteModal andSender:sender];
 }
 // Open Edit Channel Modal
--(void) openEditChannelModal
+- (void)openEditChannelModal
 {
     // Retrieving object at index
     NSInteger indexRowSelected = [[self tableView] selectedRow];
@@ -144,7 +144,7 @@
 //  ENTITIES
 //
 // Add Channel
--(IBAction) addChannel:(id)sender
+- (IBAction)addChannel:(id)sender
 {
     // Creating Password entity
     Password *pwd = nil;
@@ -169,7 +169,7 @@
     [self closeChannelModal:nil];
 }
 // Delete Channel
--(IBAction) confirmDelete:(id)sender
+- (IBAction)confirmDelete:(id)sender
 {
     // Removing object at row index
     NSInteger indexRowSelected = [[self tableView] selectedRow];
@@ -182,7 +182,7 @@
     [self closeDeleteModal:nil];
 }
 
--(IBAction) copyPasswordToPasteboard:(id)sender
+- (IBAction)copyPasswordToPasteboard:(id)sender
 {
     [self copyStringToPasteboard:[[self passwordField] stringValue]];
 }
