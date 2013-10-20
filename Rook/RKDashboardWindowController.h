@@ -45,4 +45,5 @@
 - (IBAction)openDeleteModal:(id)sender;
 - (IBAction)closeDeleteModal:(id)sender;
 - (IBAction)copyPasswordToPasteboard:(id)sender;
+- (IBAction)exportToCSV:(id)sender;
 @end

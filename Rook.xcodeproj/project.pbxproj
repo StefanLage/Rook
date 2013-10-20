@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0874080818148F6700525DC5 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0874080718148F6700525DC5 /* CHCSVParser.m */; };
 		089325C717E6C2A90069D63D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089325C617E6C2A90069D63D /* Cocoa.framework */; };
 		089325D117E6C2A90069D63D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089325CF17E6C2A90069D63D /* InfoPlist.strings */; };
 		089325D317E6C2A90069D63D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 089325D217E6C2A90069D63D /* main.m */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0874080618148F6700525DC5 /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
+		0874080718148F6700525DC5 /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
 		089325C317E6C2A90069D63D /* Rook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		089325C617E6C2A90069D63D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		089325C917E6C2A90069D63D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -231,6 +234,8 @@
 		08BF16D917FA4C3000E1A642 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				0874080618148F6700525DC5 /* CHCSVParser.h */,
+				0874080718148F6700525DC5 /* CHCSVParser.m */,
 				08BF16DD17FA518400E1A642 /* INWindowButton.h */,
 				08BF16DE17FA518400E1A642 /* INWindowButton.m */,
 				08BF16DA17FA4C3000E1A642 /* INAppStoreWindow.h */,
@@ -377,6 +382,7 @@
 				089325D317E6C2A90069D63D /* main.m in Sources */,
 				0893260617E6CB470069D63D /* RKDashboardWindowController.m in Sources */,
 				08BF16DF17FA518400E1A642 /* INWindowButton.m in Sources */,
+				0874080818148F6700525DC5 /* CHCSVParser.m in Sources */,
 				08D61F6217F93174006D8FB2 /* Password.m in Sources */,
 				089325DA17E6C2A90069D63D /* RKAppDelegate.m in Sources */,
 				089325E017E6C2A90069D63D /* Rook.xcdatamodeld in Sources */,
