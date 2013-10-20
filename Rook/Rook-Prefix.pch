@@ -15,3 +15,12 @@
     #define APPSUPPORT_DIR @"matthieu.Rook"
     #define COREDATA_FILE  @"Rook.storedata"
 #endif
+
+#ifdef DEBUG
+#   define RKLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#   define QLog(object) NSLog(@"%@", object)
+#else
+#   define RKLog(...)
+#   define QLog(...)
+#endif
+#define RKRLog(fmt, ...) NSLog((@"%s : " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__)
