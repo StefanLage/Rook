@@ -32,10 +32,7 @@
 
 #pragma mark - Logic datas
 @property (strong, nonatomic) IBOutlet NSArrayController *passwordArrayController;
-@property (strong, nonatomic) NSManagedObjectContext *context;
-
-#pragma mark - Initialization
-- (id)initWithMOContext:(NSManagedObjectContext *)mocontext;
+@property (weak, nonatomic) NSManagedObjectContext *context;
 
 #pragma mark - XIB Action Bindings
 - (IBAction)addChannel:(id)sender;
@@ -46,4 +43,8 @@
 - (IBAction)closeDeleteModal:(id)sender;
 - (IBAction)copyPasswordToPasteboard:(id)sender;
 - (IBAction)exportToCSV:(id)sender;
+
+#pragma mark - Helper
++ (NSString *)windowNibName;
+
 @end
