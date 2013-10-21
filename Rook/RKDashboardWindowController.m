@@ -10,6 +10,7 @@
 #import "Password.h"
 #import "RKCoreDataManager.h"
 #import "RKCSVHelper.h"
+#import "STPrivilegedTask.h"
 
 @implementation RKDashboardWindowController
 
@@ -202,6 +203,12 @@
 // Export passwords to CSV
 - (IBAction)exportToCSV:(id)sender
 {
+    STPrivilegedTask *rootAccessPrompt = [[STPrivilegedTask alloc] initWithLaunchPath:@"/bin/echo" arguments:@[@"Rook Access for Export"]];
+    int isRootAccessAllowed = [rootAccessPrompt launch];
+    rootAccessPrompt = nil;
+    if(isRootAccessAllowed != 0)
+        return;
+    
     NSOpenPanel* openDlg = [NSOpenPanel openPanel];
     [openDlg setCanChooseFiles:NO];
     [openDlg setCanChooseDirectories:YES];
