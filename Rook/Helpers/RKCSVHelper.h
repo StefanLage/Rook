@@ -11,5 +11,6 @@
 @interface RKCSVHelper : NSObject
 
 + (BOOL)createCSVFileAtPath:(NSString *)path forPasswordList:(NSArray *)passwords;
++ (BOOL)importFromCSVFileAtPath:(NSString *)path;
 
 @end

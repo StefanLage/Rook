@@ -16,6 +16,9 @@
 @property (strong, nonatomic) NSString *alias;
 @property (strong, nonatomic) NSData *password;
 
++ (NSString *)entityName;
++ (instancetype)insertNewObjectIntoContext:(NSManagedObjectContext *)context;
+
 - (void)setStringPassword:(NSString *)password;
 - (NSString *)stringPassword;
 

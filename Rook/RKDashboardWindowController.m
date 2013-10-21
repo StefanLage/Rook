@@ -53,6 +53,9 @@
     mainBundle = [NSBundle mainBundle];
     [[self revisionLabel] setStringValue:[mainBundle objectForInfoDictionaryKey:@"Revision"]];
     [[self commitLabel] setStringValue:[mainBundle objectForInfoDictionaryKey:@"Commit"]];
+    
+    // Registering for update
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView) name:rkReloadTableViewNotificationName object:nil];
 }
 
 #pragma mark - Helpers
@@ -212,6 +215,32 @@
         fileName = [filePath stringByAppendingString:fileName];
         [RKCSVHelper createCSVFileAtPath:fileName forPasswordList:[self.passwordArrayController arrangedObjects]];
     }
+}
+
+// Import passwords from CSV
+- (IBAction)importFromCSV:(id)sender
+{
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+    [openDlg setCanChooseFiles:YES];
+    [openDlg setAllowsMultipleSelection:NO];
+    [openDlg setAllowsOtherFileTypes:NO];
+    [openDlg setAllowedFileTypes:@[@"csv"]];
+    [openDlg setCanChooseDirectories:NO];
+    [openDlg setResolvesAliases:NO];
+    
+    if([openDlg runModal] == NSOKButton)
+    {
+        NSString *filePath = [[openDlg URL] relativePath];
+        [RKCSVHelper importFromCSVFileAtPath:filePath];
+    }
+}
+
+#pragma mark - Notifications
+
+- (void)reloadTableView
+{
+    if(self.tableView)
+        [self.tableView reloadData];
 }
 
 @end
