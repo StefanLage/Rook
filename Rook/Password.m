@@ -7,7 +7,7 @@
 //
 
 #import "Password.h"
-
+#import "NSString+AESMutableData.h"
 
 @implementation Password
 
@@ -15,5 +15,17 @@
 @dynamic identifier;
 @dynamic alias;
 @dynamic password;
+
+- (void)setStringPassword:(NSString *)password
+{
+    [self willChangeValueForKey:@"password"];
+    [self setPrimitiveValue:[password encryptAES] forKey:@"password"];
+    [self didChangeValueForKey:@"password"];
+}
+
+- (NSString *)stringPassword
+{
+    return [[NSString string] decryptAESWithData:[self primitiveValueForKey:@"password"]];
+}
 
 @end

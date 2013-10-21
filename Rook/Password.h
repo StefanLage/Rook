@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-
 @interface Password : NSManagedObject
 
-@property (strong, nonatomic) NSString * channel;
-@property (strong, nonatomic) NSString * identifier;
-@property (strong, nonatomic) NSString * alias;
-@property (strong, nonatomic) NSString * password;
+@property (strong, nonatomic) NSString *channel;
+@property (strong, nonatomic) NSString *identifier;
+@property (strong, nonatomic) NSString *alias;
+@property (strong, nonatomic) NSData *password;
+
+- (void)setStringPassword:(NSString *)password;
+- (NSString *)stringPassword;
 
 @end

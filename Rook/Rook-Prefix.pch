@@ -8,12 +8,22 @@
     #import <Cocoa/Cocoa.h>
 #endif
 
+// ENCRYPTION
+
+#define rkAESEncryptionKey @"^*&^87^876876876-0-0-0-KJHUHUIHbhbed'/'/[]212e182e98120938s"
+
+// ASSETS
+
+#define rkCSVFileOutputFormat [NSString stringWithFormat:@"/rook-%lu.csv", (unsigned long)[[NSDate date] timeIntervalSince1970]]
+
+// LOGGING HELPERS
+
 #ifdef DEBUG
-    #define APPSUPPORT_DIR @"matthieu.Rook-dev"
-    #define COREDATA_FILE  @"Rook-dev.storedata"
+    #define rkAppSupportDir @"matthieu.Rook-dev"
+    #define rkCoreDataFile  @"Rook-dev.sqlite"
 #else
-    #define APPSUPPORT_DIR @"matthieu.Rook"
-    #define COREDATA_FILE  @"Rook.storedata"
+    #define rkAppSupportDir @"matthieu.Rook"
+    #define rkCoreDataFile  @"Rook.sqlite"
 #endif
 
 #ifdef DEBUG

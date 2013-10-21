@@ -9,14 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "RKDashboardWindowController.h"
 #import "INAppStoreWindow.h"
+#import "RKCoreDataManager.h"
 
 @interface RKAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (readonly, strong, nonatomic) RKDashboardWindowController *dashboardWindowController;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
-- (IBAction)saveAction:(id)sender;
 
 @end

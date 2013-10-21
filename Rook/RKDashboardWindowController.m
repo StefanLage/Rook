@@ -8,29 +8,27 @@
 
 #import "RKDashboardWindowController.h"
 #import "Password.h"
-#import "CHCSVParser.h"
+#import "RKCoreDataManager.h"
+#import "RKCSVHelper.h"
 
 @implementation RKDashboardWindowController
 
 @synthesize addChannelBtn, removeChannelBtn, cancelChannelModalBtn, saveChannelModalBtn, pastePasswordBtn;
 @synthesize channelField, aliasField, identifierField, passwordField;
 @synthesize channelModal, deleteModal, titleBarView, tableView = _tableView;
-@synthesize context, passwordArrayController;
+@synthesize passwordArrayController, context = _context;
 @synthesize revisionLabel, commitLabel;
 
 #pragma mark - NSWindow Initialization
-- (id)initWithMOContext:(NSManagedObjectContext *)mocontext
+
+- (id)initWithWindowNibName:(NSString *)windowNibName
 {
-    if ((self = [super init])){
-        self.context = mocontext;
+    if ((self = [super initWithWindowNibName:windowNibName]))
+    {
         isEditing = false;
+        _context = [RKCoreDataManager sharedInstance].managedObjectContext;
     }
     return self;
-}
-
-- (NSString *)windowNibName
-{
-	return @"RKDashboardWindowController";
 }
 
 - (void)windowDidLoad
@@ -58,6 +56,11 @@
 }
 
 #pragma mark - Helpers
+
++ (NSString *)windowNibName
+{
+	return @"RKDashboardWindowController";
+}
 
 - (void)openModalWithPanel:(NSPanel *)panel
 {
@@ -90,9 +93,7 @@
 }
 
 #pragma mark - XIB & Click Action Bindings
-//
-//  MODALS
-//
+
 // Open Channel Modal
 - (IBAction)openChannelModal:(id)sender
 {
@@ -100,6 +101,7 @@
     [[self channelModal] setTitle:@"Add"];
     [self openModalWithPanel:self.channelModal];
 }
+
 // Close Channel Modal
 - (IBAction)closeChannelModal:(id)sender
 {
@@ -108,16 +110,19 @@
     [self clearFields];
     [[self pastePasswordBtn] setHidden:true];
 }
+
 // Open Delete Modal
 - (IBAction)openDeleteModal:(id)sender
 {
     [self openModalWithPanel:self.deleteModal];
 }
+
 // Close Delete Modal
 - (IBAction)closeDeleteModal:(id)sender
 {
     [self closeModalForPanel:self.deleteModal andSender:sender];
 }
+
 // Open Edit Channel Modal
 - (void)openEditChannelModal
 {
@@ -131,7 +136,7 @@
     [[self channelField] setStringValue:pwd.channel];
     [[self aliasField] setStringValue:pwd.alias];
     [[self identifierField] setStringValue:pwd.identifier];
-    [[self passwordField] setStringValue:pwd.password];
+    [[self passwordField] setStringValue:pwd.stringPassword];
     
     // Opening edit modal
     [[self pastePasswordBtn] setHidden:false];
@@ -144,6 +149,7 @@
 //
 //  ENTITIES
 //
+
 // Add Channel
 - (IBAction)addChannel:(id)sender
 {
@@ -151,7 +157,7 @@
     Password *pwd = nil;
     if(!isEditing)
         pwd = [NSEntityDescription insertNewObjectForEntityForName:@"Password"
-                                            inManagedObjectContext:[self context]];
+                                            inManagedObjectContext:[RKCoreDataManager sharedInstance].managedObjectContext];
     else
     {
         NSInteger indexRowSelected = [[self tableView] selectedRow];
@@ -161,14 +167,15 @@
     [pwd setChannel:[[self channelField] stringValue]];
     [pwd setAlias:[[self aliasField] stringValue]];
     [pwd setIdentifier:[[self identifierField] stringValue]];
-    [pwd setPassword:[[self passwordField] stringValue]];
+    [pwd setStringPassword:[[self passwordField] stringValue]];
     
     // Saving Context
-    [[self context] save:nil];
+    [[RKCoreDataManager sharedInstance].managedObjectContext save:nil];
     
     // Closing Modal
     [self closeChannelModal:nil];
 }
+
 // Delete Channel
 - (IBAction)confirmDelete:(id)sender
 {
@@ -177,12 +184,13 @@
     [[self passwordArrayController] removeObjectAtArrangedObjectIndex:indexRowSelected];
 
     // Saving Context
-    [[self context] save:nil];
+    [[RKCoreDataManager sharedInstance].managedObjectContext save:nil];
     
     // Closing Modal
     [self closeDeleteModal:nil];
 }
 
+// Copy to pasteboard
 - (IBAction)copyPasswordToPasteboard:(id)sender
 {
     [self copyStringToPasteboard:[[self passwordField] stringValue]];
@@ -200,19 +208,9 @@
     if([openDlg runModal] == NSOKButton)
     {
         NSString *filePath = [[openDlg directoryURL] relativePath];
-        NSString *fileName = [NSString stringWithFormat:@"/rook-%lu.csv", (unsigned long)[[NSDate date] timeIntervalSince1970]];
+        NSString *fileName = rkCSVFileOutputFormat;
         fileName = [filePath stringByAppendingString:fileName];
-
-        NSArray *passwordsArray = [self.passwordArrayController arrangedObjects];
-        CHCSVWriter *csvWriter = [[CHCSVWriter alloc] initForWritingToCSVFile:fileName];
-        for(Password *pwd in passwordsArray)
-        {
-            [csvWriter writeField:pwd.channel];
-            [csvWriter writeField:pwd.identifier];
-            [csvWriter writeField:pwd.alias];
-            [csvWriter writeField:pwd.password];
-            [csvWriter finishLine];
-        }
+        [RKCSVHelper createCSVFileAtPath:fileName forPasswordList:[self.passwordArrayController arrangedObjects]];
     }
 }
 
