@@ -9,6 +9,7 @@
 #import "RKCSVHelper.h"
 #import "CHCSVParser.h"
 #import "Password.h"
+#import "RKCoreDataManager.h"
 
 @implementation RKCSVHelper
 
@@ -31,5 +32,40 @@
     }
     return TRUE;
 }
+
++ (BOOL)importFromCSVFileAtPath:(NSString *)path
+{
+    NSArray *csvArrayParsed = [NSArray arrayWithContentsOfCSVFile:path];
+    if (csvArrayParsed == nil)
+        return FALSE;
+    
+    NSManagedObjectContext *moc = [RKCoreDataManager sharedInstance].managedObjectContext;
+    if(!moc)
+        return FALSE;
+    
+    Password *pwd = nil;
+    for(NSArray *password in csvArrayParsed)
+    {
+        if([password count] < 4)
+            continue;
+        pwd = [Password insertNewObjectIntoContext:moc];
+        [pwd setChannel:[password objectAtIndex:0]];
+        [pwd setIdentifier:[password objectAtIndex:1]];
+        [pwd setAlias:[password objectAtIndex:2]];
+        [pwd setStringPassword:[password objectAtIndex:3]];
+        pwd = nil;
+    }
+    NSError *error = nil;
+    if(![moc save:&error])
+    {
+        [[NSApplication sharedApplication] presentError:error];
+        return FALSE;
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:rkReloadTableViewNotificationName object:nil];
+    
+    return TRUE;
+}
+
 
 @end

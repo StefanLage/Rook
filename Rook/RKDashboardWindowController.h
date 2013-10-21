@@ -43,6 +43,7 @@
 - (IBAction)closeDeleteModal:(id)sender;
 - (IBAction)copyPasswordToPasteboard:(id)sender;
 - (IBAction)exportToCSV:(id)sender;
+- (IBAction)importFromCSV:(id)sender;
 
 #pragma mark - Helper
 + (NSString *)windowNibName;

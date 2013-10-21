@@ -16,6 +16,21 @@
 @dynamic alias;
 @dynamic password;
 
+#pragma mark - Helpers
+
++ (NSString *)entityName
+{
+    return @"Password";
+}
+
++ (instancetype)insertNewObjectIntoContext:(NSManagedObjectContext *)context
+{
+    return [NSEntityDescription insertNewObjectForEntityForName:[self entityName]
+                                         inManagedObjectContext:context];
+}
+
+#pragma mark - Custom Setters/Getters
+
 - (void)setStringPassword:(NSString *)password
 {
     [self willChangeValueForKey:@"password"];
