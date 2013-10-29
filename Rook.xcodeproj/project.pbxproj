@@ -37,6 +37,7 @@
 		08EB004E17E6FDA8004D9146 /* StatusHover.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EB004A17E6FDA8004D9146 /* StatusHover.png */; };
 		08EB004F17E6FDA8004D9146 /* StatusHover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EB004B17E6FDA8004D9146 /* StatusHover@2x.png */; };
 		08F94B7D17F9F44000265DFC /* version.sh in Resources */ = {isa = PBXBuildFile; fileRef = 08F94B7C17F9F44000265DFC /* version.sh */; };
+		F8B4E2E9182056FC00F49097 /* RKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B4E2E8182056FC00F49097 /* RKTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		08EB004A17E6FDA8004D9146 /* StatusHover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusHover.png; sourceTree = "<group>"; };
 		08EB004B17E6FDA8004D9146 /* StatusHover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusHover@2x.png"; sourceTree = "<group>"; };
 		08F94B7C17F9F44000265DFC /* version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = version.sh; sourceTree = SOURCE_ROOT; };
+		F8B4E2E7182056FC00F49097 /* RKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKTextField.h; sourceTree = "<group>"; };
+		F8B4E2E8182056FC00F49097 /* RKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +250,7 @@
 		0893260117E6C5900069D63D /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				F8B4E2E6182056E300F49097 /* Classes */,
 				089FA19718150D4600881767 /* Categories */,
 				089FA1931815039A00881767 /* Helpers */,
 				0893260017E6C5250069D63D /* Models */,
@@ -329,6 +333,15 @@
 				08EB004B17E6FDA8004D9146 /* StatusHover@2x.png */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		F8B4E2E6182056E300F49097 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F8B4E2E7182056FC00F49097 /* RKTextField.h */,
+				F8B4E2E8182056FC00F49097 /* RKTextField.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,6 +476,7 @@
 				089FA19D18150F4E00881767 /* NSMutableData+AES.m in Sources */,
 				08D61F6217F93174006D8FB2 /* Password.m in Sources */,
 				089325DA17E6C2A90069D63D /* RKAppDelegate.m in Sources */,
+				F8B4E2E9182056FC00F49097 /* RKTextField.m in Sources */,
 				089FA1B71815A5E800881767 /* RKCSVHelper.m in Sources */,
 				089FA1A418151D8D00881767 /* NSString+AESMutableData.m in Sources */,
 				08E618451815BF73007ACBFA /* STPrivilegedTask.m in Sources */,
