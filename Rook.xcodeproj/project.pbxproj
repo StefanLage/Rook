@@ -38,6 +38,7 @@
 		08EB004F17E6FDA8004D9146 /* StatusHover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EB004B17E6FDA8004D9146 /* StatusHover@2x.png */; };
 		08F94B7D17F9F44000265DFC /* version.sh in Resources */ = {isa = PBXBuildFile; fileRef = 08F94B7C17F9F44000265DFC /* version.sh */; };
 		F8B4E2E9182056FC00F49097 /* RKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B4E2E8182056FC00F49097 /* RKTextField.m */; };
+		F8EF9C841827FBB200A19530 /* RKTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EF9C831827FBB200A19530 /* RKTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		08F94B7C17F9F44000265DFC /* version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = version.sh; sourceTree = SOURCE_ROOT; };
 		F8B4E2E7182056FC00F49097 /* RKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKTextField.h; sourceTree = "<group>"; };
 		F8B4E2E8182056FC00F49097 /* RKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKTextField.m; sourceTree = "<group>"; };
+		F8EF9C821827FBB200A19530 /* RKTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKTableView.h; sourceTree = "<group>"; };
+		F8EF9C831827FBB200A19530 /* RKTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +343,8 @@
 			children = (
 				F8B4E2E7182056FC00F49097 /* RKTextField.h */,
 				F8B4E2E8182056FC00F49097 /* RKTextField.m */,
+				F8EF9C821827FBB200A19530 /* RKTableView.h */,
+				F8EF9C831827FBB200A19530 /* RKTableView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 				08BF16DF17FA518400E1A642 /* INWindowButton.m in Sources */,
 				0874080818148F6700525DC5 /* CHCSVParser.m in Sources */,
 				089FA19D18150F4E00881767 /* NSMutableData+AES.m in Sources */,
+				F8EF9C841827FBB200A19530 /* RKTableView.m in Sources */,
 				08D61F6217F93174006D8FB2 /* Password.m in Sources */,
 				089325DA17E6C2A90069D63D /* RKAppDelegate.m in Sources */,
 				F8B4E2E9182056FC00F49097 /* RKTextField.m in Sources */,

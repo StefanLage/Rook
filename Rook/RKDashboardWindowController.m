@@ -41,6 +41,8 @@
 {
     [[self tableView] setTarget:self];
     [[self tableView] setDoubleAction:@selector(openEditChannelModal)];
+    // Set RKTableView's delegate
+    [[self tableView] setDel_delegate:self];
     
     // Custom title bar size & view
     INAppStoreWindow *aWindow = (INAppStoreWindow*)[self window];
@@ -248,6 +250,14 @@
 {
     if(self.tableView)
         [self.tableView reloadData];
+}
+
+// Delegate of RKTableView
+// Call openDeleteModal to allow user to delete a row from Del Key
+- (void)delete_row:(BOOL)value{
+    if(value)
+        // Open openDeleteModal
+        [self openDeleteModal:nil];
 }
 
 @end

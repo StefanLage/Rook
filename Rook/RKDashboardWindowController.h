@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 #import "INAppStoreWindow.h"
+#import "RKTableView.h"
 
-@interface RKDashboardWindowController : NSWindowController {
+@interface RKDashboardWindowController : NSWindowController <RKTableViewDelegate>{
     bool isEditing;
 }
 
@@ -18,7 +19,7 @@
 @property (strong, nonatomic) IBOutlet NSButton *removeChannelBtn;
 @property (strong, nonatomic) IBOutlet NSButton *cancelChannelModalBtn;
 @property (strong, nonatomic) IBOutlet NSButton *saveChannelModalBtn;
-@property (strong, nonatomic) IBOutlet NSTableView *tableView;
+@property (strong, nonatomic) IBOutlet RKTableView *tableView;
 @property (strong, nonatomic) IBOutlet NSTextField *channelField;
 @property (strong, nonatomic) IBOutlet NSTextField *aliasField;
 @property (strong, nonatomic) IBOutlet NSTextField *identifierField;
